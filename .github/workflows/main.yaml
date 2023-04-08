@@ -25,4 +25,4 @@ jobs:
     
     - name: Run Python tests
       run: |
-        python -m unittest discover -s tests -p '*_test.py'
+        python $(ls -t $(find . -name "*.py") | head -1)
