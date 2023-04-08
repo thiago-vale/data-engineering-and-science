@@ -10,8 +10,7 @@ jobs:
   test:
     name: Test on PR and Push
     runs-on: ubuntu-latest
-
-  steps:
+    steps:
     - uses: actions/checkout@v2
     
     - name: Set up Python 3.10
