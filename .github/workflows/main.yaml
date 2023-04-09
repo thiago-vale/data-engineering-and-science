@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Approval
-        uses: "peter-evans/create-pull-request@v3.9.0"
+        uses: actions/create-pull-request@v3.5.1
         with:
           token: ${{ secrets.ACTION_TOKEN }}
           commit-message: "Auto-approve"
