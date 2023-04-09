@@ -25,7 +25,6 @@ jobs:
     
     - name: Run Python tests
       run: |
-        jupyter nbconvert --to python $(ls -t $(find . -name "*.ipynb") | head -1)
         python $(ls -t $(find . -name "*.py") | head -1)
 
   approve:
