@@ -27,3 +27,19 @@ jobs:
       run: |
         jupyter nbconvert --to python $(ls -t $(find . -name "*.ipynb") | head -1)
         python $(ls -t $(find . -name "*.py") | head -1)
+  
+  approve:
+    needs: test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Approval
+        uses: "peter-evans/create-pull-request@v3.9.0"
+        with:
+          token: ${{ secrets.ACTION_TOKEN }}
+          commit-message: "Auto-approve"
+          title: "Auto-approve"
+          body: "Auto-approve"
+          branch: auto-approve
+          delete-branch: true
+          labels: "approved"
