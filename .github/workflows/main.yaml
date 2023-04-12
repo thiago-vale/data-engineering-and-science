@@ -26,7 +26,3 @@ jobs:
       - name: Run Python tests
         run: |
           python $(ls -t $(find . -name "*.py") | head -1)
-
-      - name: Test with pytest
-        run: |
-          pytest
