@@ -3,3 +3,9 @@
 *.log
 
 temp/
+
+_*
+
+._*
+part*
+.part*
