@@ -7,7 +7,7 @@ on:
     branches: ['*']
   
 jobs:
-  test:
+  python:
     name: Test Python
     runs-on: ubuntu-latest
     steps:
