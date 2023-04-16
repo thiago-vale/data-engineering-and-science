@@ -22,10 +22,10 @@ def spark_configs():
                 .set('spark.sql.parquet.datetimeRebaseModeInWrite', 'LEGACY')
                 .set('spark.network.timeout', '100000000')
                 .set('spark.executor.heartbeatInterval', '100000000')
-                .set('spark.executor.memory', '4G') #quanto aloca memória local
-                .set('spark.driver.memory', '4G') #quanto de dados pode trafegar
+                .set('spark.executor.memory', '2G') #quanto aloca memória local
+                .set('spark.driver.memory', '2G') #quanto de dados pode trafegar
                 .set('spark.memory.offHeap.enabled', 'true')
-                .set('spark.memory.offHeap.size', '4G' )
+                .set('spark.memory.offHeap.size', '2G' )
                 .set('spark.sql.autoBroadcastJoinThreshold', '-1')
                 .set('spark.sql.broadcastTimeout', '300000')  
                 .set('spark.executor.cores', '8') #quantos cores

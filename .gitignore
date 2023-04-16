@@ -4,15 +4,8 @@
 
 temp/
 
-*.parquet
-
-.part*
-
-part*
-
-*.crc
-
 _*
 
-
-
+._*
+part*
+.part*
