@@ -1,11 +1,9 @@
-name: Test on PR and Push
+name: Test on PR
 
 on:
   pull_request:
     branches: [master]
-  push:
-    branches: ['*']
-  
+
 jobs:
   python:
     name: Test Python
