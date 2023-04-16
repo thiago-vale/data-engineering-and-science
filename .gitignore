@@ -3,3 +3,16 @@
 *.log
 
 temp/
+
+*.parquet
+
+.part*
+
+part*
+
+*.crc
+
+_*
+
+
+
