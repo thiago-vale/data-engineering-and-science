@@ -4,3 +4,4 @@ jupyterlab==3.6.3
 pytest==7.3.0
 fastapi==0.95.1
 uvicorn==0.21.1
+redis==4.5.4
