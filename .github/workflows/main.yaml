@@ -39,7 +39,7 @@ jobs:
         run: docker build -t myimage:latest .
       
       - name: Test Docker image
-        run: docker run -p 8000:8000 myimage:latest
+        run: docker run -d -p 8000:8000 myimage:latest
 
       - name: Stop Docker container
         run: docker stop $(docker ps -a -q --filter ancestor=myimage:latest --format="{{.ID}}")
