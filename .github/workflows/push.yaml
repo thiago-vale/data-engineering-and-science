@@ -13,9 +13,6 @@ jobs:
 
             - name: runs command
               uses: echo $(pwd)
-
-            - name: runs ls
-              uses: echo $(ls)
             
             - name: Set up Python 3.9
               uses: actions/setup-python@v2
