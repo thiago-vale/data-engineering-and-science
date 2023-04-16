@@ -1,11 +1,15 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from redis import Redis
 
 app = FastAPI()
+redis = Redis(host='redis', port=6370)
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
-    return '''
+    redis.incr("count")
+    count = str(redis.get("count"), 'utf-8')
+    return f'''
             <html>
                 <head>
                     <title>MY FastApi</title>
@@ -13,7 +17,7 @@ async def root():
                     
                 <body>
                     <div style="text-algin: center">
-                        <h1> XP Educação </h1>
+                        <h1> count: {count} </h1>
                     </div>
                 </body>
             </html>
