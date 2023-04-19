@@ -10,17 +10,20 @@ async def root():
     redis.incr("count")
     count = str(redis.get("count"), 'utf-8')
     return f'''
-            <html>
-                <head>
-                    <title>MY FastApi</title>
-                </head>
-                    
-                <body>
-                    <div style="text-algin: center">
-                        <h1> count: {count} </h1>
-                    </div>
-                </body>
-            </html>
+      <html>
+        <meta charset="UTF-8"/>
+        <head>
+          <title>My FastApi</title>
+        </head>
+
+        <body style="background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);">
+          <div style="text-align: center;line-height: 200px;color: rgb(255, 255, 0);">
+            <h1>XP Educação | Aprenda com quem faz</h1>
+            <p>{count}</p>
+          </div>
+        </body>
+      </html>  
+  """
     
     '''
 
