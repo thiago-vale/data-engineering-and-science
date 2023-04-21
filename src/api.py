@@ -21,6 +21,9 @@ async def root():
             <h1>XP Educação | Aprenda com quem faz</h1>
             <p>{count}</p>
           </div>
+          <div style="text-align: center;line-height: 200px;color: rgb(255, 255, 0);">
+            <h1> Versão 2.0.0</h1>
+          </div>
         </body>
       </html>  
   """
