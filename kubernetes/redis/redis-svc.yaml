@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc
+  namespace: site
+spec:
+  selector:
+    app: redis-cluster
+  ports:
+  - port: 6379
+    name: client
+  - port: 16379
+    name: bus
