@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: aws-test
+  namespace: aws
+spec:
+  ttlSecondsAfterFinished: 60 #tempo para limpeza dos recursos
+  backoffLimit: 2 #retry
+  template:
+    spec:
+      containers:
+      - name: aws-cli
+        image: amazon/aws-cli
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        command: ["aws", "s3", "ls"]
+        envFrom:
+          - secretRef:
+              name: "aws-credentials"
+      restartPolicy: Never
