@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: aws-test
+  namespace: aws
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 20
+      backoffLimit: 1
+      template:
+        spec:
+          containers:
+          - name: aws-cli
+            image: amazon/aws-cli
+            resources:
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+            command: ["aws", "s3", "ls"]
+            envFrom:
+              - secretRef:
+                  name: "aws-credentials"
+          restartPolicy: Never
